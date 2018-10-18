@@ -1,0 +1,42 @@
+Entrevista técnica - Felipe Mayworm
+
+Diferença entre overload x override.
+Overload, é uma sobrecarga de métodos que consiste em você declarar vários métodos em uma única classe ou em classes descendentes, com o mesmo nome, porém eles tem que ter assinaturas diferentes.
+Override, é uma sobrescrita do método somente é possível em classes herdadas, isto porque este conceito significa o que o próprio nome já diz, ou seja, substituir um método da superclasse na subclasse sobrescrevendo-o (substituindo-o) o mesmo. 
+
+Diferença entre SOAP e REST.
+SOAP é um protocolo de transferência de mensagens em formato XML para uso em ambientes distribuídos. O padrão SOAP funciona como um tipo de framework que permite a interoperabilidade entre diversas plataformas com mensagens personalizadas.
+REST é outro um protocolo de comunicação, baseado no protocolo de hipermídia HTTP. Porém ele não impõe restrições ao formato da mensagem, apenas no comportamento dos componentes envolvidos.
+
+Qual é melhor para trabalhar com Contratos?
+SOAP.
+
+Quais os escopos do Maven.
+Compile: O pacote é considerado na compilação. Se houver empacotamento, a dependência é inclusa no pacote. 
+Provided: O pacote é considerado na compilação, mas não é incluso no pacote se houver empacotamento. 
+Import: Só funciona para dependências do tipo POM na parte <dependencyManagement> do seu arquivo pom.xml. Basicamente inclui todas as dependências contidas dentro do POM da dependência no seu POM. 
+Runtime: Indica que a dependência não precisa estar na compilação, mas precisa estar na execução. 
+Test: Indica que a dependência é usada apenas na fase de testes. 
+System: Semelhante ao provided, mas para JARs. Os JARs precisam ser especificados explicitamente.
+
+O que é servlet?
+O nome "servlet" vem da ideia de um pequeno servidor (servidorzinho, em inglês) cujo objetivo é receber chamadas HTTP, processá-las e devolver uma resposta ao cliente.
+
+Diferença entre Stack memory e Heap memory
+O Heap, ou área de alocação dinâmica, é um espaço reservado para variáveis e dados criados durante a execução do programa (runtime). Vamos dizer que o Heap é a memória global do programa. Já a pilha de funções (stack) é uma área da memória que aloca dados/variáveis ou ponteiros quando uma função é chamada e desalocada quando a função termina. Podemos dizer então que representa a memória local àquela função.
+
+Diferença ArrayList e LinkedList
+ As diferenças são basicamente relativas à inserção/remoção e iteração. A LinkedList é a mais rápida para inserção e interação. Se vc precisa de uma lista que vc carrega e depois apenas itera ( sem remover ou alterar) Linked é melhor. ArrayList é melhor se vc precisa de acesso com índice ( chamado acesso aleatório) ou seja , quando vc usa o lista.get(i), por isso ela implementa tb a interface RandomAccess. 
+
+Diferença entre Hashmap e Hashtable
+Hashmap Não é sincronizada, Aceita valores nulos e uma chave nula, É possível varrer toda estrutura com um iterador de forma simples, Possui containsValue() e containsKey(), É mais rápida, Consome menos memória, Mais moderna Mãe: AbstractMap e já Hashtable é Sincronizada e pode ser facilmente usada em ambiente concorrente, Não aceita nulos, Iterar é mais complicado, Possui contains(), Tem overhead pela sincronização, Ocupa mais memória, Considerada obsoleta Mãe Dictionary.
+
+Como ordenar um Hashmap.
+https://stackoverflow.com/questions/29567575/sort-map-by-value-using-lambdas-and-streams
+
+Pediu para implementar um método genérico para printar todos tipos de array.
+
+ public static <E> void printArray(E[] inputArray) {
+    for (E element : inputArray)
+      System.out.printf("%s ", element);
+  }
